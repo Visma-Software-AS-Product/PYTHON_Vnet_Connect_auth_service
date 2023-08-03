@@ -1,9 +1,12 @@
 from oauthlib.oauth2 import BackendApplicationClient
 from requests_oauthlib import OAuth2Session
+from dotenv import load_dotenv
 
 import os
 import requests
 import json
+
+load_dotenv()
 
 _client_id = os.environ.get('CLIENT_ID')
 _client_secret = os.environ.get('CLIENT_SECRET')
@@ -32,4 +35,3 @@ if response.status_code == 200:
     result = {
         "Description": item['description']            
     }
-    
